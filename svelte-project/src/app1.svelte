@@ -2,7 +2,7 @@
   import { auth, googleProvider } from "./firebase";
   import { signInWithPopup, signOut } from "firebase/auth";
   import { authState } from "rxfire/auth";
-  import  ChatSession from "./ChatSession.svelte";
+  import ChatSession from "./ChatSession.svelte";
 
   let user;
 
@@ -19,7 +19,7 @@
 
 <main>
   {#if user}
-    <ChatSession user={user} logout={logout}>
+    <ChatSession {user} {logout} />
   {:else}
     <div class="login-form">
       <button on:click={login}>
